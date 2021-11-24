@@ -9,7 +9,7 @@ window.onblur = function() {
 }
 window.onload = function() {
     if (!window.chrome) {
-        document.body.style.background = "#626668"
+        document.body.style.background = "linear-gradient(0deg, #000000 0%, #1B1B1B 99%, #27130F 100%)"
         changeview("start", "incompatible")
     }
 }
