@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="main.js"></script>
+<link rel="stylesheet" href="main.css"/>
+<script src="https://kit.fontawesome.com/0bc8abc3f9.js" crossorigin="anonymous"></script>
+<link rel="shortcut icon" href="icon.png">
+<title>City Defender</title>
+</head>
+<body>
+
+<div id="start" style="display:flex;">
+<h1 class="title">City Defender</h1>
+<div class="dock">
+<button class="dockicon" onclick="javascript:startgame()"><i class="fas fa-gamepad"></i></i></button>
+<button class="dockicon" onclick="javascript:changeview('', 'controls')"><i class="fas fa-keyboard"></i></button>
+<button class="dockicon" onclick="javascript:changeview('', 'options')"><i class="fas fa-cog"></i></button>
+</div>
+</div>
+
+<div id="incompatible" class="newapp visuallyhidden" style="display: none;">
+<h1 class="apptitle">Incompatible browser detected</h1>
+<p class="apptext">Please use Google Chrome or<br>Microsoft Edge to play City Defender.</p>
+<button onclick="javascript:window.open('https://www.google.com/chrome', '_self')" class="button buttonfleft">Chrome <i class="fas fa-external-link-alt"></i></button>
+<button onclick="javascript:window.open('https://www.microsoft.com/edge', '_self')" class="button buttonfright">Edge <i class="fas fa-external-link-alt"></i></button>
+</div>
+
+<div id="controls" class="newapp visuallyhidden" style="display: none;">
+<h1 class="apptitle">Controls</h1>
+<table class="apptable"><tr><td>A</td><td>Move left</td></tr><tr><td>D</td><td>Move right</td></tr><tr><td>Space</td><td>Shoot</td>
+</tr><tr><td>R</td><td>Reload</td></tr><tr><td>Left click on "Use Joker"</td><td>Delete all zombies</td></tr></table>
+<button class="button ok" onclick="javascript:changeview('controls', '')">Ok</button>
+</div>
+
+<div id="options" class="newapp visuallyhidden" style="display: none;">
+<h1 class="apptitle">Options</h1>
+<button class="button" onclick="javascript:updatejoker()">Joker: <span id="jokerstate">Enabled</span></button>
+<br><button class="button" onclick="javascript:updatemag()">Magazine: <span id="magstate">15</span></button>
+<br><button class="button ok" onclick="javascript:changeview('options', '')">Ok</button>
+</div>  
+
+<div id="wonscreen" class="newapp visuallyhidden" style="display: none;">
+<h1 class="apptitle">You won</h1>
+<p class="apptext" id="scorelabel">Score: 100%</p>
+<button class="button ok" onclick="javascript:changeview('wonscreen', 'start')">Ok</button>
+</div>
+
+<div id="deathscreen" class="newapp visuallyhidden" style="display: none;">
+<h1 class="apptitle">Game over</h1>
+<p class="apptext" id="scorelabel">Score: <span id="scored">100</span>%</p>
+<button class="button ok" onclick="javascript:changeview('deathscreen', 'start')">Ok</button>
+</div>
+
+<div id="stopscreen" class="newapp visuallyhidden" style="display: none;">
+<h1 class="apptitle">Game interrupted</h1>
+<p class="apptext" id="scorelabel">Score: <span id="sscored">100</span>%</p>
+<button class="button ok" onclick="javascript:changeview('stopscreen', 'start')">Ok</button>
+</div>
+
+<div id="game" style="display: none;">
+<div class="sky"></div><div class="floor"></div><div class="wall_front"></div><div class="wall_top"></div>
+<div id="player" class="player"></div>
+<div class="dock">
+<button id="joker" class="button buttondock " onclick="javascript:joker()">Use Joker</button>
+<pre class="dockicon label">Ammo: <span id="ammolbl"></span>/<span id="maxammo"></span></pre>
+<pre class="dockicon label">Progress: <span id="scorelbl"></span>%</pre>
+<pre class="dockicon label">Health: <span id="healthlbl"></span>%</pre>
+<button class="button buttondock " onclick="javascript:stop('stopscreen')">Exit</button>
+</div> 
+
+<body>
+</html>

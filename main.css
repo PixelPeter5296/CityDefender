@@ -1,0 +1,240 @@
+* {
+	font-family: Tahoma;
+	color: white;
+	transition: 0.2s;
+}
+*:focus {
+	outline: none;
+}
+body {
+	margin:0;
+	background-image: url("skyscraper.png");
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center center;
+}
+.floor {
+	background: linear-gradient(0deg, #000000 0%, #1B1B1B 99%, #27130F 100%);
+	width:100%;
+	height:80%;
+	position:fixed;
+	top:248px;
+}
+.sky {
+	background-color: #8C8C8C;
+	width: 100%;
+	height: 20%;
+	margin: 0;
+	position: absolute;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center center;
+}
+.player {
+	image-rendering:pixelated;
+	width:70px;
+	z-index: 1001;
+	height:70px;
+	top:20px;
+	position:fixed;
+	left:50vw;
+	background-image: url('player.png');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	transition: 0s;
+}
+.laser {
+	height: 50px;
+	width: 4px;
+	position: fixed;
+	z-index: 1000;
+	background-color: #C10000;
+	border-radius: 2px;
+	transition: 0s;
+}
+.zombie {
+	image-rendering:pixelated;
+	width:100px;
+	height:100px;
+	transition:0.2s;
+	-webkit-transition:0.2s;
+	-moz-transition:0.2s;
+	position:fixed;
+	background-size: 100%;
+	background-image: url('zombie.png');
+	background-repeat: no-repeat;
+	z-index: 998;
+}
+.wall_front {
+	image-rendering:pixelated;
+	background-position:center;
+	background-size: 80px 80px;
+	width: 100%;
+	height: 150px;
+	z-index: 998;
+	top: 98px;
+	filter: brightness(0.5);
+	position: fixed;
+	background-image:url("wall.png");
+}
+.wall_top {
+	-webkit-box-shadow: 0px -3px 16px 3px #27130F; 
+	box-shadow: 0px -3px 16px 3px #27130F;
+	image-rendering:pixelated;
+	background-image:url("wall.png");
+	background-position:center;
+	background-size: 120px;
+	z-index: 998;
+	width: 100%;
+	height: 100px;
+	filter: brightness(0.5);
+	top:30px;
+	position: fixed;
+	transform: perspective(500px) rotateX(70deg);
+}
+.title {
+	font-size:10vh;
+	position: relative;
+	font-weight: bold;
+	top: 6vh;
+	text-align: center;
+	margin: auto;
+}
+.dock {
+	position: absolute;
+	width: 100%;
+	height: 70px;
+	margin: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(30, 30, 30, 0.2); 
+	border-top: 1px solid #555555;
+	backdrop-filter: brightness(0.7) blur(10px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1001;
+}
+.dockicon {
+	border: 0px;
+	background: none;
+	font-size: 35px;
+	border: 1px solid rgba(249, 249, 249, 0);
+	margin-left: 2px;
+	margin-right: 2px;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	border-radius: 10px;
+	cursor: pointer;
+	justify-content: center;
+}
+.dockicon:hover {
+	transform: translateY(-5px);
+}
+.label {
+	width: 150px;
+	font-size: 18px;
+}
+.label:hover {
+	border: 1px solid rgba(0, 0, 0, 0);
+	transform: translateY(0px);
+}
+.newapp {
+	width: 30%;
+	height: auto;
+	position: absolute;
+	left: 35%;
+	top: 25%;
+	background-color: rgba(30, 30, 30, 0.2); 
+	border: 1px solid #555555;
+	backdrop-filter: brightness(0.7) blur(10px);
+	text-align: center;
+	border-radius: 10px;
+}
+.apptitle {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+}
+.button {
+	margin-left: 2px;
+	margin-right: 2px;
+	background-color: rgba(30, 30, 30, 0.3); 
+	border: 1px solid rgba(249, 249, 249, 0.2);
+	border-radius: 10px;
+	width: 200px;
+	height: 40px;
+	font-size:18px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+.button:hover {
+	border-color: white;
+}
+.buttondock {
+	margin-bottom: 0px;
+}
+.buttonfleft {
+	margin-right: 0px;
+	margin-left: 0px;
+	width: 120px;
+	transform: translateX(2.5px);
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.buttonfright {
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 120px;
+	transform: translateX(-2.5px);
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+.ok {
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+.unicodeicon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.apptext {
+	line-height: 40px;
+	font-size: 18px;
+}
+.apptable {
+	width: 50%;
+	margin-left: 25%;
+}
+tr {
+	height: 40px;
+	font-size: 18px;
+}
+.appform {
+	display: flex;
+	justify-content: center;
+	height: 40px;
+	width: 150px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+.visuallyhidden {
+	opacity: 0;
+}
+.visuallyvisible {
+	opacity: 1;
+}
+#start {
+	z-index: 300;
+}
+#game {
+	z-index: 299;
+}
